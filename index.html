@@ -12,6 +12,15 @@
     />
   </head>
   <body>
+    <script>
+      // Restore path from GitHub Pages 404 redirect query param.
+      (function () {
+        var p = window.location.search.match(/[?&]p=([^&]*)/);
+        if (p) {
+          window.history.replaceState(null, null, '/' + decodeURIComponent(p[1]));
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
