@@ -9,7 +9,7 @@ import CrashPage       from './pages/games/CrashPage';
 export default function App() {
   return (
     <GameProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/"          element={<LobbyPage />} />
           <Route path="/slots"     element={<SlotsPage />} />
